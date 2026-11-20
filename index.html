@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1942c6">
+<title>Scholarship Navigator</title>
+<link rel="preload" href="fonts/anek-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="#start" data-a="home"><span class="logo" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg></span><span>Scholarship Navigator</span></a>
+  <nav class="main" id="mainnav" aria-label="Main">
+    <a href="browse.html" id="nav-sch">Scholarships</a>
+    <a href="#work" id="nav-work">Internships</a>
+    <a href="#skills" id="nav-skills">Skills</a>
+    <a href="#coaching" id="nav-coaching">Coaching and exam fees</a>
+    <a href="apply.html">How to apply</a>
+    <a href="#data" id="nav-data" class="only-menu">Our data</a>
+    <a href="#start" class="only-menu" data-a="lang" id="langmenu">हिन्दी</a>
+  </nav>
+  <div class="hbtns">
+    <button class="hbtn lang" id="langbtn" data-a="lang" type="button">हिन्दी</button>
+    <a class="hbtn go" id="mybtn" href="#start">My matches</a>
+    <button class="hbtn menu" id="menubtn" type="button" aria-expanded="false" aria-controls="mainnav">Menu</button>
+  </div>
+</div></header>
+<main><div class="wrap" id="view"></div></main>
+<footer class="site"><div class="wrap">
+  <span id="footcheck">Each scheme shows where its facts come from. Always confirm on the official portal before you apply.</span>
+  <span><a href="#data">Our data</a><a href="#changes">What changed</a><a href="#fake">Spot a fake</a><a href="#class" data-a="classmode">For teachers and counsellors</a></span>
+</div></footer>
+<nav class="tabs" id="tabs" hidden><div class="wrap">
+  <a href="#schemes" id="tab-schemes"></a><a href="#costs" id="tab-costs"></a><a href="#loan" id="tab-loan"></a><a href="#ready" id="tab-ready"></a><a href="#help" id="tab-help"></a>
+</div></nav>
+<script src="app.js"></script>
+</body>
+</html>
