@@ -6,26 +6,19 @@
 @font-face{font-family:"Anek Devanagari";font-style:normal;font-display:swap;font-weight:100 800;src:url(fonts/anek-devanagari.woff2) format("woff2");
   unicode-range:U+0900-097F,U+1CD0-1CF9,U+200C-200D,U+20A8,U+25CC,U+A830-A839,U+A8E0-A8FF}
 /* Version 3 layout: wide pages, a menu across the top, tiles and card grids; phone gets a fold-out menu and bottom tabs.
-   NSATS theme (14 November 2026): ink #161616, deep blue #1942c6, blue #2c60f5, light blue #82a8f8, wash #eef5fe.
+   NSATS light theme (20 November 2026), matching beta.nsats.com: white page, ink #161616, muted #525252, lines #d8d8d8,
+   NSATS blue #0f62fe, grey bands #f4f4f4, blue tint #edf5ff, dark footer #161616, square corners, regular-weight headings.
    Green, amber and red are kept only for status (likely, check, closing), where colour carries meaning.
    No outside requests: fonts are served from this site. */
 
 :root{
-  --paper:#f5f8fe; --wash:#eef5fe; --surface:#ffffff; --ink:#161616; --muted:#4b5565; --line:#dbe4f3; --soft:#eef3fb;
-  --accent:#1942c6; --accent-2:#2c60f5; --sky:#82a8f8; --accent-ink:#ffffff; --mark:#82a8f8; --hero:#1942c6; --hero-soft:#d6e3ff; --deep:#161616; --deep-2:#262a33; --deep-soft:#b8c2d6;
-  --good:#11653a; --good-bg:#dcf3e5; --warn:#8a5a00; --warn-bg:#fdf1cf; --bad:#b42318; --bad-bg:#fde7e4;
-  --blue-bg:#e3ebfd; --blue:#1942c6;
+  --paper:#ffffff; --wash:#f4f4f4; --surface:#ffffff; --ink:#161616; --muted:#525252; --line:#d8d8d8; --soft:#f4f4f4;
+  --accent:#0f62fe; --accent-2:#0050e6; --sky:#0f62fe; --accent-ink:#ffffff; --mark:#0f62fe; --hero:#ffffff; --hero-soft:#525252; --deep:#161616; --deep-2:#262626; --deep-soft:#c6c6c6;
+  --good:#198038; --good-bg:#defbe6; --warn:#8e6a00; --warn-bg:#fcf4d6; --bad:#da1e28; --bad-bg:#fff1f1;
+  --blue-bg:#edf5ff; --blue:#0f62fe;
   --font:"Anek Latin","Anek Devanagari","Noto Sans","Noto Sans Devanagari",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --r:14px;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --paper:#0e1117; --wash:#121722; --surface:#161b24; --ink:#eef2fa; --muted:#a3adc2; --line:#2a3242; --soft:#1c2330;
-    --accent:#82a8f8; --accent-2:#a9c3fb; --sky:#82a8f8; --accent-ink:#0b1430; --mark:#82a8f8; --hero:#15296e; --hero-soft:#c6d6fb; --deep:#0a0c10; --deep-2:#1c2330; --deep-soft:#a3adc2;
-    --good:#7fdca6; --good-bg:#14301f; --warn:#f2c46a; --warn-bg:#3a2e10; --bad:#ff9a8a; --bad-bg:#3d1a16;
-    --blue-bg:#1b2747; --blue:#a9c3fb;
-    color-scheme:dark;
-  }
+  --r:0px;
+  color-scheme:light;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
@@ -312,3 +305,44 @@ footer.site a:hover{color:var(--sky)}
 .grid .card{height:100%;display:flex;flex-direction:column}
 .grid .card .row:last-child{margin-top:auto!important;padding-top:8px}
 .pill{max-width:100%;white-space:normal}
+
+/* ---------- NSATS light layout (beta.nsats.com) ---------- */
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h1,h2,.hhead h2,.quick h2{font-weight:400;letter-spacing:-.01em}
+h3,.sc h3{font-weight:600}
+.brand{font-weight:600}
+.btn,.hbtn,.cta,.card,.sc,.tile,.dl,.quick,.safe,.money,.money .m2 div,.sheet,.receipt,.opt,.strip,.sharpen,
+.field input,.field select,.quick select,.qchip,.chip,.pnav a,nav.main a,.logo,.ic,.safe .ic,.when,.pill.plain,
+.meter,.meter i,.progress,.bar{border-radius:0}
+.btn,.hbtn,.cta{font-weight:500}
+.btn:hover,.hbtn.go:hover,.cta:hover{background:var(--accent-2);border-color:var(--accent-2);color:#fff}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn.ghost:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.cta{justify-content:space-between;padding:0 18px;font-size:17px}
+nav.main a{font-weight:400}
+nav.main a:hover,nav.main a.on{background:var(--soft);color:var(--ink);box-shadow:inset 0 -2px 0 var(--accent)}
+.homehero{background:var(--paper);color:var(--ink);border-bottom:1px solid var(--line)}
+.homehero h1{color:var(--ink);font-weight:400}
+.homehero .lead{color:var(--muted)}
+.homehero .tag{background:transparent;color:var(--ink);padding:0;border-radius:0;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.stats b{font-weight:300}
+.stats span{color:var(--muted)}
+.quick{background:var(--wash);border:1px solid var(--line);box-shadow:none}
+.quick select{border:0;border-bottom:1px solid #8d8d8d;background:var(--surface)}
+.qchip{border:1px solid #c6c6c6;font-weight:400}
+.qchip[aria-pressed="true"]{border:1px solid var(--accent);box-shadow:inset 0 0 0 1px var(--accent);background:var(--blue-bg);color:var(--ink);font-weight:600}
+.field input,.field select{border:0;border-bottom:1px solid #8d8d8d;background:var(--wash)}
+.big{font-weight:300}
+.tile b,.dl .amt,.sc .amt{font-weight:400}
+.tile:hover,.dl:hover{background:#e8e8e8;border-color:var(--line)}
+.money{background:var(--wash);color:var(--ink);border-left:4px solid var(--accent)}
+.money .lbl,.money .note,.money .amt small,.money .m2 span{color:var(--muted)}
+.money .amt,.money .m2 b{font-weight:400}
+.money .note a{color:var(--accent)}
+.money .m2 div{background:var(--surface);border:1px solid var(--line)}
+.money .m2 .g{color:var(--good)}.money .m2 .y{color:var(--warn)}
+.safe .btn{background:var(--ink);border-color:var(--ink);color:#fff}
+.safe .btn:hover{background:#393939;border-color:#393939}
+footer.site{background:var(--deep);color:var(--deep-soft)}
+footer.site a:hover{color:#78a9ff}
+
